@@ -4,6 +4,11 @@ A Java 21 static-analysis application with a React dashboard. Upload Java source
 
 Source is parsed into a JavaParser abstract syntax tree (AST). It is never compiled or executed. This project focuses on explainable Java maintainability heuristics rather than reproducing SonarQube's feature set.
 
+## Dashboard Preview
+
+<img width="2289" height="1247" alt="image" src="https://github.com/user-attachments/assets/7ae8f484-fedb-421b-9435-fe139c812a71" />
+
+
 ## Start the application
 
 Requires Docker Desktop or Docker Engine with Compose, plus Python 3 for automatic port selection. From this directory:
