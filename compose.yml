@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: analyzer
+      POSTGRES_USER: analyzer
+      POSTGRES_PASSWORD: analyzer_dev
+    ports:
+      - "127.0.0.1:${ANALYZER_DB_PORT:-35479}:5432"
+    volumes:
+      - analyzer-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U analyzer -d analyzer"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  backend:
+    build: ./backend
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/analyzer
+    ports:
+      - "127.0.0.1:${ANALYZER_API_PORT:-38479}:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+  frontend:
+    build: ./frontend
+    ports:
+      - "127.0.0.1:${ANALYZER_UI_PORT:-33479}:80"
+    depends_on:
+      - backend
+volumes:
+  analyzer-data:
