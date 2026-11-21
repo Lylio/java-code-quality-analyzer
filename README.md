@@ -4,6 +4,10 @@ A Java 21 static-analysis application with a React dashboard. Upload Java source
 
 Source is parsed into a JavaParser abstract syntax tree (AST). It is never compiled or executed. This project focuses on explainable Java maintainability heuristics rather than reproducing SonarQube's feature set.
 
+## System Architecture & Data Flow
+
+![Java Code Quality Analyzer](docs/architecture.svg)
+
 ## Start the application
 
 Requires Docker Desktop or Docker Engine with Compose, plus Python 3 for automatic port selection. From this directory:
