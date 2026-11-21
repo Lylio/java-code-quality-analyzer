@@ -8,6 +8,12 @@ Source is parsed into a JavaParser abstract syntax tree (AST). It is never compi
 
 ![Java Code Quality Analyzer](docs/architecture.svg)
 
+## Dashboard Preview
+
+<img width="2289" height="1247" alt="image" src="https://github.com/user-attachments/assets/7ae8f484-fedb-421b-9435-fe139c812a71" />
+
+>>>>>>> feb1787ad4b0b18346a9d86738de5e9927d4872e
+
 ## Start the application
 
 Requires Docker Desktop or Docker Engine with Compose, plus Python 3 for automatic port selection. From this directory:
